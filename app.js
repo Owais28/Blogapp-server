@@ -41,7 +41,7 @@ app.use('/search', searchRouter)
 // });
 
 
-app.listen(3001, (req, res) => {
-  console.log('server started on localhost:3001')
+app.listen(process.env.PORT || 8080, (req, res) => {
+  console.log('server started on localhost:8080')
 })
 module.exports = app;
