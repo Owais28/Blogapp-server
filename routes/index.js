@@ -1,27 +1,36 @@
 var express = require('express');
 var router = express.Router();
+const dotenv = require('dotenv').config();
 
 const User = require('../models/User');
 const mongoose = require('mongoose')
 
 
-mongoose.connect(uri);
+mongoose.connect(process.env.DATABASE_URI);
 
 // const fetchNode = require('node-fetch');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
   try{
-    
+
+    // new instance of user model
     const user = new User({
-      name : "Owais",
+      name : "Athar",
       email: "wajan@hmasd.com",
-      password: "sdasdkjdue82344ro34urhd",
+      password: "sduh845#$^&^#$dsft54%",
     })
-  
-    user.save()
-  
-    res.render('index', { title: 'Express' });
+
+
+    user.save((err, result) => {
+      console.log('Account created successfully\n');
+      console.log({
+        result
+      })
+    })
+    
+    res.render('index', { title: "Express"});
+
   } catch(e) {
     console.log(e)
   }
