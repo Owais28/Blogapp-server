@@ -14,20 +14,20 @@ mongoose.connect(process.env.DATABASE_URI);
 router.get('/', function(req, res, next) {
   try{
 
-    // new instance of user model
-    const user = new User({
-      name : "Athar",
-      email: "wajan@hmasd.com",
-      password: "sduh845#$^&^#$dsft54%",
-    })
+    // // new instance of user model
+    // const user = new User({
+    //   name : "Athar",
+    //   email: "wajan@hmasd.com",
+    //   password: "sduh845#$^&^#$dsft54%",
+    // })
 
 
-    user.save((err, result) => {
-      console.log('Account created successfully\n');
-      console.log({
-        result
-      })
-    })
+    // user.save((err, result) => {
+    //   console.log('Account created successfully\n');
+    //   console.log({
+    //     result
+    //   })
+    // })
     
     res.render('index', { title: "Express"});
 
