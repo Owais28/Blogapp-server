@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 
+
+const uri = process.env.DATABASE_URI
+
 var app = express();
 
 // view engine setup
@@ -31,6 +34,8 @@ app.use('/search', searchRouter)
 //   next(createError(404));
 // });
 
+
+
 // error handler
 // app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -46,4 +51,6 @@ app.use('/search', searchRouter)
 app.listen(process.env.PORT || 8080, (req, res) => {
   console.log('server started on localhost:8080')
 })
+
+
 module.exports = app;
