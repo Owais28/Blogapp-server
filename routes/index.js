@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const dotenv = require('dotenv').config();
 
-const User = require('../models/User');
+// const User = require('../models/User');  
 const mongoose = require('mongoose')
 
 
